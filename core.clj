@@ -49,20 +49,20 @@
       (loop [y 0]
         (when (< y (get_size list x))
 	           
-	      (if (not= -1 (.indexOf all_operators (get_nth_element list x y)))
-         (println (format "%10s" (get_nth_element list x y)) " is operator" )
-         (if (not= -1 (.indexOf all_keywords (get_nth_element list x y)))
-           (println (format "%10s" (get_nth_element list x y)) " is keyword" )
+	  (if (not= -1 (.indexOf all_operators (get_nth_element list x y)))
+            (println (format "%10s" (get_nth_element list x y)) " is operator" )
+            (if (not= -1 (.indexOf all_keywords (get_nth_element list x y)))
+              (println (format "%10s" (get_nth_element list x y)) " is keyword" )
 
-           (if (= "true"  (get_nth_element list x y))
-             (println (format "%10s" (get_nth_element list x y)) " is binary value" )
-             (if (= "false"  (get_nth_element list x y))
-               (println (format "%10s" (get_nth_element list x y)) " is binary value" )
+              (if (= "true"  (get_nth_element list x y))
+                (println (format "%10s" (get_nth_element list x y)) " is binary value" )
+                (if (= "false"  (get_nth_element list x y))
+                  (println (format "%10s" (get_nth_element list x y)) " is binary value" )
 	           
-               (if (= -1 (.indexOf all_operators (get_nth_element list x y))) 
-	                (if (not= 0 (count (cstr/trim (get_nth_element list x y))))
-	                  (if (= true (numeric? (get_nth_element list x y)))
-                     (println (format "%10s" (get_nth_element list x y)) " is integer" )
+                   (if (= -1 (.indexOf all_operators (get_nth_element list x y))) 
+	             (if (not= 0 (count (cstr/trim (get_nth_element list x y))))
+	               (if (= true (numeric? (get_nth_element list x y)))
+                          (println (format "%10s" (get_nth_element list x y)) " is integer" )
 	                    (println (format "%10s" (get_nth_element list x y)) " is identifier" )
 	                    )))))))
 	      
